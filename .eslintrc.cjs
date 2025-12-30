@@ -15,5 +15,6 @@ module.exports = {
     quotes: "off",
     "class-methods-use-this": "off",
     "import/extensions": "off",
+    "no-return-await": "off",
   },
 };
