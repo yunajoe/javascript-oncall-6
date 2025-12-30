@@ -16,5 +16,8 @@ module.exports = {
     "class-methods-use-this": "off",
     "import/extensions": "off",
     "no-return-await": "off",
+    "import/order": "off",
+    "no-undef": "off",
+    "import/prefer-default-export": "off",
   },
 };

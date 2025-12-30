@@ -6,8 +6,7 @@ class App {
     const result1 = await input.getMonthAndDayInputMessage();
     const result2 = await input.getWeekDayWorkersInputMessage();
     const result3 = await input.getHoliDayWorkersInputMessage();
-    console.log("result1 ===>", result1);
-    console.log("result2 ====>", result2, "result3 ====>", result3);
+    console.log("", "result2 ====>", result2, "result3 ====>", result3);
   }
 }
 
