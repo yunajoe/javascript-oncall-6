@@ -50,7 +50,6 @@ const runExceptions = async ({
 const run = async ({ inputs = [], expected = [] }) => {
   // given
   const logSpy = getLogSpy();
-  console.log("인풋 ===>", inputs);
   mockQuestions(inputs);
 
   // when
