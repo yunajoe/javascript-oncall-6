@@ -19,5 +19,7 @@ module.exports = {
     "import/order": "off",
     "no-undef": "off",
     "import/prefer-default-export": "off",
+    "operator-linebreak": "off",
+    "max-len": "off",
   },
 };

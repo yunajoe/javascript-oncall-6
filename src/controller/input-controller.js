@@ -12,7 +12,7 @@ class InputController {
   async readMonthAndDay() {
     try {
       const input = await this.inputView.getMonthAndDayInputMessage();
-      this.validator.validateMonthAndDay(input); //
+      this.validator.validateMonthAndDay(input); // 월&요일 인풋 검증
     } catch (error) {
       Console.print(error);
     }
