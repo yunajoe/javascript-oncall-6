@@ -1,17 +1,25 @@
-// const runException = async (input) => {
-//   // given
-//   const logSpy = getLogSpy();
+import { MONTH_AND_DAY_ERROR_MESSAGE } from "../src/constants/errors";
+import Validator from "../src/utils/validator";
 
-//   const RANDOM_NUMBERS_TO_END = [1, 2, 3, 4, 5, 6];
-//   const INPUT_NUMBERS_TO_END = ["1000", "1,2,3,4,5,6", "7"];
+describe("Validator - validateMonthAndDay 예외 처리", () => {
+  let validator;
 
-//   mockRandoms([RANDOM_NUMBERS_TO_END]);
-//   mockQuestions([input, ...INPUT_NUMBERS_TO_END]);
-
-//   // when
-//   const app = new App();
-//   await app.run();
-
-//   // then
-//   expect(logSpy).toHaveBeenCalledWith(expect.stringContaining("[ERROR]"));
-// };
+  beforeEach(() => {
+    validator = new Validator();
+  });
+  test("입력이 빈 문자열이면 예외가 발생한다", () => {
+    expect(() => {
+      validator.validateMonthAndDay("");
+    }).toThrow(MONTH_AND_DAY_ERROR_MESSAGE.EMPTY_INPUT);
+  });
+  test("월이 1~12 범위를 벗어나면 예외가 발생한다", () => {
+    expect(() => {
+      validator.validateMonthAndDay("13,월");
+    }).toThrow(MONTH_AND_DAY_ERROR_MESSAGE.MONTH_INPUT);
+  });
+  test("요일이 잘못되면 예외가 발생한다", () => {
+    expect(() => {
+      validator.validateMonthAndDay("3,월요일");
+    }).toThrow(MONTH_AND_DAY_ERROR_MESSAGE.DAY_INPUT);
+  });
+});
