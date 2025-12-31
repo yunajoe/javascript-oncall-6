@@ -22,5 +22,10 @@ module.exports = {
     "operator-linebreak": "off",
     "max-len": "off",
     "no-await-in-loop": "off",
+    "no-constant-condition": "off",
+    "comma-dangle": "off",
+    "no-plusplus": "off",
+    indent: "off",
+    "prefer-const": "off",
   },
 };

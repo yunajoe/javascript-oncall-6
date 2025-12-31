@@ -10,12 +10,11 @@ class InputController {
   }
 
   async readMonthAndDay() {
-    let loop = true;
-    while (loop) {
+    while (true) {
       try {
         const input = await this.inputView.getMonthAndDayInputMessage();
-        this.validator.validateMonthAndDay(input); // 월&요일 인풋 검증
-        loop = false;
+        this.validator.validateMonthAndDay(input); // 월&요일 인풋 검증 => 에러가 나면은 이 줄에서 멈추고 catch 로 간다.
+        return input;
       } catch (error) {
         Console.print(error);
       }
@@ -23,12 +22,11 @@ class InputController {
   }
 
   async readWeekDayWorkers() {
-    let loop = true;
-    while (loop) {
+    while (true) {
       try {
         const input = await this.inputView.getWeekDayWorkersInputMessage();
         this.validator.validateWeekDayWorkers(input); // 평일 비상 근무 인풋 검증
-        loop = false;
+        return input;
       } catch (error) {
         Console.print(error);
       }
@@ -36,12 +34,11 @@ class InputController {
   }
 
   async readHolidayWorkers() {
-    let loop = true;
-    while (loop) {
+    while (true) {
       try {
         const input = await this.inputView.getHoliDayWorkersInputMessage();
         this.validator.validateHolidayWorkers(input); // 휴일 비상 근무 인풋 검증
-        loop = false;
+        return input;
       } catch (error) {
         Console.print(error);
         await this.readWeekDayWorkers();
