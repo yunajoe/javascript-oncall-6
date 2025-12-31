@@ -21,5 +21,6 @@ module.exports = {
     "import/prefer-default-export": "off",
     "operator-linebreak": "off",
     "max-len": "off",
+    "no-await-in-loop": "off",
   },
 };

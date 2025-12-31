@@ -11,4 +11,15 @@ const WEEK_DAY_ERROR_MESSAGE = {
     "[ERROR] 근무자는 총 5명이상 35명 이하여야 합니다.",
 };
 
-export { MONTH_AND_DAY_ERROR_MESSAGE, WEEK_DAY_ERROR_MESSAGE };
+const HOLIDAY_ERROR_MESSAGE = {
+  EMPTY_INPUT: "[ERROR] 빈 문자열은 허용이 안됩니다.",
+  NAME_LENGTH_INPUT: "[ERROR] 이름은 최소 1글자 최대 5글자만 허용이 됩니다.",
+  TOTAL_WORKERS_LENGTH_INPUT:
+    "[ERROR] 근무자는 총 5명이상 35명 이하여야 합니다.",
+};
+
+export {
+  HOLIDAY_ERROR_MESSAGE,
+  MONTH_AND_DAY_ERROR_MESSAGE,
+  WEEK_DAY_ERROR_MESSAGE,
+};

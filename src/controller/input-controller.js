@@ -10,20 +10,41 @@ class InputController {
   }
 
   async readMonthAndDay() {
-    try {
-      const input = await this.inputView.getMonthAndDayInputMessage();
-      this.validator.validateMonthAndDay(input); // 월&요일 인풋 검증
-    } catch (error) {
-      Console.print(error);
+    let loop = true;
+    while (loop) {
+      try {
+        const input = await this.inputView.getMonthAndDayInputMessage();
+        this.validator.validateMonthAndDay(input); // 월&요일 인풋 검증
+        loop = false;
+      } catch (error) {
+        Console.print(error);
+      }
     }
   }
 
   async readWeekDayWorkers() {
-    try {
-      const input = await this.inputView.getWeekDayWorkersInputMessage();
-      this.validator.validateWeekDayWorkers(input); // 평일 비상 근무 인풋 검증
-    } catch (error) {
-      Console.print(error);
+    let loop = true;
+    while (loop) {
+      try {
+        const input = await this.inputView.getWeekDayWorkersInputMessage();
+        this.validator.validateWeekDayWorkers(input); // 평일 비상 근무 인풋 검증
+        loop = false;
+      } catch (error) {
+        Console.print(error);
+      }
+    }
+  }
+
+  async readHolidayWorkers() {
+    let loop = true;
+    while (loop) {
+      try {
+        const input = await this.inputView.getHoliDayWorkersInputMessage();
+        this.validator.validateHolidayWorkers(input); // 휴일 비상 근무 인풋 검증
+        loop = false;
+      } catch (error) {
+        Console.print(error);
+      }
     }
   }
 }

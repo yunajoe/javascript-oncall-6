@@ -5,6 +5,7 @@ class App {
     const inputController = new InputController();
     await inputController.readMonthAndDay();
     await inputController.readWeekDayWorkers();
+    await inputController.readHolidayWorkers();
   }
 }
 
