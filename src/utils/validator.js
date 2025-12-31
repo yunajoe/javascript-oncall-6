@@ -1,4 +1,7 @@
-import { MONTH_AND_DAY_ERROR_MESSAGE } from "../constants/errors.js";
+import {
+  MONTH_AND_DAY_ERROR_MESSAGE,
+  WEEK_DAY_ERROR_MESSAGE,
+} from "../constants/errors.js";
 
 class Validator {
   validateMonthAndDay(input) {
@@ -17,7 +20,21 @@ class Validator {
     }
   }
 
-  validateWeekDayWorkers(input) {}
+  validateWeekDayWorkers(input) {
+    if (input.length === 0) {
+      throw new Error(WEEK_DAY_ERROR_MESSAGE.EMPTY_INPUT);
+    }
+    const splitInput = input.split(",");
+    if (splitInput.length < 5 || splitInput.length > 35) {
+      throw new Error(WEEK_DAY_ERROR_MESSAGE.TOTAL_WORKERS_LENGTH_INPUT);
+    }
+    splitInput.forEach((name) => {
+      const trimmedName = name.trim();
+      if (trimmedName.length < 1 || trimmedName.length > 5) {
+        throw new Error(WEEK_DAY_ERROR_MESSAGE.NAME_LENGTH_INPUT);
+      }
+    });
+  }
 
   validateHolidayWorkers(input) {}
 }

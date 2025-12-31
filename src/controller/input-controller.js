@@ -17,6 +17,15 @@ class InputController {
       Console.print(error);
     }
   }
+
+  async readWeekDayWorkers() {
+    try {
+      const input = await this.inputView.getWeekDayWorkersInputMessage();
+      this.validator.validateWeekDayWorkers(input); // 평일 비상 근무 인풋 검증
+    } catch (error) {
+      Console.print(error);
+    }
+  }
 }
 
 export default InputController;
