@@ -33,9 +33,14 @@ class Validator {
       throw new Error(WEEK_DAY_ERROR_MESSAGE.EMPTY_INPUT);
     }
     const splitInput = input.split(",");
+    const removeDuplicatedNames = new Set(splitInput);
+    if (splitInput.length !== removeDuplicatedNames.size) {
+      throw new Error(WEEK_DAY_ERROR_MESSAGE.DUPLICATED_INPUT);
+    }
     if (splitInput.length < 5 || splitInput.length > 35) {
       throw new Error(WEEK_DAY_ERROR_MESSAGE.TOTAL_WORKERS_LENGTH_INPUT);
     }
+
     splitInput.forEach((name) => {
       const trimmedName = name.trim();
       if (trimmedName.length < 1 || trimmedName.length > 5) {
@@ -49,6 +54,10 @@ class Validator {
       throw new Error(HOLIDAY_ERROR_MESSAGE.EMPTY_INPUT);
     }
     const splitInput = input.split(",");
+    const removeDuplicatedNames = new Set(splitInput);
+    if (splitInput.length !== removeDuplicatedNames.size) {
+      throw new Error(HOLIDAY_ERROR_MESSAGE.DUPLICATED_INPUT);
+    }
     if (splitInput.length < 5 || splitInput.length > 35) {
       throw new Error(HOLIDAY_ERROR_MESSAGE.TOTAL_WORKERS_LENGTH_INPUT);
     }

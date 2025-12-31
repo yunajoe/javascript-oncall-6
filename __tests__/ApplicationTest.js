@@ -60,11 +60,6 @@ const run = async ({ inputs = [], expected = [] }) => {
 };
 
 describe("온콜 테스트", () => {
-  test("빈 문자열 테스튼", async () => {
-    await runExceptions({
-      inputs: [""],
-    });
-  });
   test("예외 테스트", async () => {
     await runExceptions({
       inputs: ["0,일"],

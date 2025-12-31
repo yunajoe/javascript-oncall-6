@@ -44,6 +44,7 @@ class InputController {
         loop = false;
       } catch (error) {
         Console.print(error);
+        await this.readWeekDayWorkers();
       }
     }
   }
